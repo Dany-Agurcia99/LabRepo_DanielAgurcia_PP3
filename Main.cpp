@@ -11,7 +11,7 @@ int main()
 {
     char usuario[20] = "home";
     char computadora[20] = "vm-gauss";
-    char directorio[20] = "";
+    char directorio[30] = "";
     char input[20];
     string salida = "";
     initscr();
@@ -69,6 +69,17 @@ int main()
         if (input[0] == 'c' && input[1] == 'l' && input[2] == 'e' && input[3] == 'a' && input[4] == 'r')
         {
             clear();
+            refresh();
+        }
+        if (input[0] == 'c' && input[1] == 'd')
+        {
+            directorio[0]='/';
+            int posicion=1;
+            for (int i = 3; i < sizeof(input); i++)
+            {
+                directorio[posicion] = input[i];
+                posicion++;
+            }
             refresh();
         }
     }
